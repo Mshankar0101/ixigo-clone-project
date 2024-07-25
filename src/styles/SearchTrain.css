@@ -1,0 +1,580 @@
+.train-search-page{
+    background-color:#f2f2f2;
+}
+
+
+
+/* train search box */
+.train-search-box-searchPage{
+    height: auto;
+    padding: 15px 0px;
+    width: 100%;
+    background: linear-gradient(45deg, #721053, #AD2E41)
+ }
+
+ /* .search-input-feilds{
+     display: flex;
+     justify-content: flex-start;
+     align-items: center;
+     gap: 0.5rem;
+ }
+ 
+ .train-search-feild-container{
+     margin: 0px;
+     width: 100%;
+     height: 100%;
+     padding: 0px 15px;
+ }
+ .train-search-feild-relative{
+     margin: 0px;
+     width: 100%;
+     height: 100%;
+     padding: 0px 15px;
+     position: relative;
+ } */
+.train-search-box-searchPage .inputTextTrain, .train-search-box-searchPage .react-datepicker__input-container input{
+     border-style: none;
+     background-color:unset;
+     width: 100%;
+     height: 60px;
+     cursor: pointer;
+     color: white;
+     font-size: 18px;
+     font-weight: 520;
+     padding: 0px 15px 0px 17px;
+     margin-top: 5px;
+     line-height: 1.2;
+     border-bottom: 0.5px solid white;
+ }
+ /* .train-search-box-searchPage .search-input-feilds .leftRoundBorder{
+     border-top-left-radius: 10px;
+     border-bottom-left-radius: 10px;
+ } */
+ .train-search-box-searchPage .search-input-feilds .search-button{
+     padding: 10px 15px;
+     border-style: none;
+     width: 100%;
+     height: 60px;
+     cursor: pointer;
+     font-weight: 400;
+     font-size: 24px;
+     /* border-top-right-radius:10px;
+     border-bottom-right-radius: 10px; */
+     background-color: rgb(252,121,13);
+     color: #ffffff;
+     margin-top: 5px;
+ }
+ /* .train-search-box-searchPage .search-input-feilds input:hover{
+     background-color:#e4e7e7 ;
+ }  */
+ .train-search-box-searchPage .search-input-feilds .search-button:hover{
+    background-color: #e36802;
+ }
+ .train-search-box-searchPage .search-input-feilds input:focus{
+     outline: none;
+     border-bottom: 4px solid #0770E4;
+ } 
+ .train-search-box-searchPage .floating-label-train{
+     position: absolute;
+     pointer-events: none;
+     left: 35px;
+     top: 16px;  
+     transition: 0.2s ease all;
+     font-weight: 400; 
+     font-size: 16px;
+     color: #FFFFFF80;
+   }
+   .train-search-box-searchPage input:focus ~ .floating-label-train,
+ input:not(:focus):valid ~ .floating-label-train{
+   top: 6px;
+   bottom: 10px;
+   left: 29px;
+   font-size: 11px;
+   opacity: 1;
+   color: #FFFFFF80;
+ }
+ 
+ .train-search-box-searchPage .swap-icon-div{
+     position: absolute;
+     height: 30px;
+     width: 30px;
+     top: 20px;
+     left: -2%;
+     z-index: 10;
+     border-radius: 50%;
+     background-color:unset;
+     border: 0.5px solid white;
+     
+ }
+ .train-search-box-searchPage .swap-icon{
+     height: 20px;
+     width: 20px;
+     padding-top: 5px;
+     padding-left: 5px;
+     background-color:unset;
+     color: white;
+     border-radius: 50%;
+ }
+
+
+/* train filters */
+.train-filters-container{
+    margin: 0;
+    padding: 0px 20px 10px 20px;
+    background-color: white;
+    box-shadow:0 0 10px 0 rgba(0, 0, 0, .2);
+}
+.train-filters{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+   
+}
+.train-filters .train-class{
+    width: 100%;
+    /* border-right: 1px dotted rgba(0,0,0,0.2); */
+    min-width: 205px;
+    max-width: 255px;
+}
+.train-filters .train-class p{
+    margin: 10px 20px;
+    font-size: 18px;
+    font-weight: 400;
+    color: rgba(0,0,0,0.87);
+}
+.train-filters .checkbox-list{
+    padding: 0px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    min-width: 120px;
+    max-width: 200px;
+}
+.train-filters .checkbox-list > div div{
+   margin-bottom: 10px;
+}
+.train-filters .checkbox-list > div div input{
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+}
+.train-filters .checkbox-list > div div label{
+    font-size: 14px;
+    font-weight: 400;
+    color: #000000A3;
+    line-height:26px;
+    margin-left: 10px;
+    vertical-align: top;
+}
+
+.train-filters .train-quota{
+   width: 100%;
+   /* border-right: 1px dotted rgba(0,0,0,0.2); */
+   min-width: 205px;
+   max-width: 255px;
+}
+.train-filters .train-quota p{
+    margin: 10px 20px;
+    font-size: 18px;
+    font-weight: 400;
+    color: rgba(0,0,0,0.87);
+}
+.train-filters .quota-list{
+    padding: 0px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    min-width: 205px;
+    max-width: 255px;
+}
+.train-filters .quota-list>div div{
+    margin-bottom: 10px;
+}
+.train-filters .quota-list>div div input{
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+}
+.train-filters .quota-list>div div label{
+    font-size: 14px;
+    font-weight: 400;
+    color: #000000A3;
+    line-height:26px;
+    margin-left: 10px;
+    vertical-align: top;
+}
+
+.train-filters .train-time{
+   width: 100%;
+   min-width:252px;
+}
+.train-filters .train-time >div{
+    padding: 0px 20px;
+}
+.train-filters .train-time >div >p{
+    margin: 10px 0px;
+    font-size: 18px;
+    font-weight: 400;
+    color: rgba(0,0,0,0.87);
+}
+.train-time .time-list{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    flex-wrap: wrap;
+    min-width:252px;
+}
+.train-time .time-list > div p{
+    margin: 0;
+    font-size: 14px;
+    font-weight: 400;
+    color: #000000A3;
+    text-align: center;
+}
+.train-time .time-list > div div{
+    width: 98px;
+    height: 28px;
+    border: 0.5px solid #000000A3 ;
+    cursor: pointer;
+}
+.train-time .time-list > div div>p{
+    margin-top: 0px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #000000A3;
+    text-align: center;
+    line-height: 28px;
+    vertical-align: middle;
+}
+.train-time .time-list > div div:hover{
+    border: 0.5px solid #e36802;
+}
+.train-time .time-list > div div>p:hover{
+    color: #e36802;
+}
+.train-time .time-list > div .arrivalStyle{
+    background-color: #e36802;
+    border:none !important;
+    p{
+        color: white !important;
+    }
+}
+
+
+/* train sort */
+.train-sort-container{
+    margin: 20px 20px;
+    padding: 10px 15px;
+    display: flex;
+    align-items:center;
+    background-color: rgba(255,255,255,0.8);
+    box-shadow:0 0 10px 0 rgba(0, 0, 0, .2);
+    overflow: hidden;
+}
+.train-sort-container .sorting-option{
+   width:100%;
+   height: 40px;
+   border-right: 0.5px solid #00000038;
+}
+.train-sort-container .sorting-option p{
+   margin: 0;
+   margin-top: 2px;
+   font-size: 14px;
+   font-weight: 500;
+   vertical-align: middle;
+   text-align: center;
+   color: #000000A3;
+   line-height: 40px;
+}
+.train-sort-container .sorting-option p:hover{
+    color: #e36802;
+}
+.train-sort-container .sort-selected p{
+    color: #e36802 !important;
+}
+
+/* train search card */
+.train-search-card{
+    margin: 20px 20px;
+    padding: 20px 20px;
+    background-color: rgba(255,255,255,0.8);
+    box-shadow:0 0 10px 0 rgba(0, 0, 0, .2);
+    /* overflow: hidden; */
+    max-width: 960px;
+}
+.train-search-card .train-source-destination-book{
+   display: flex;
+   align-items: flex-start;
+   justify-content: space-between;
+   padding: 15px 0px;
+   gap: 2px;
+}
+.train-source-destination-book .train{
+    width: 100%;
+    max-width: 270px;
+}
+.train-source-destination-book .train >p{
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    font-style: normal;
+    color: rgb(236,88,36);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    
+}
+.train-source-destination-book .train .flex-runsOn{
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 3px;
+}
+.train-source-destination-book .train .flex-runsOn p{
+    margin: 0;
+    font-size: 12px;
+    color: #000000DE;
+    font-weight: 450;
+    font-style:normal;
+}
+.train-source-destination-book .train .train-type span:first-child{
+    margin: 0;
+    font-size: 12px;
+    color: #000000DE;
+    font-weight: 400;
+    font-style:normal;
+}
+.train-source-destination-book .train .train-type span:nth-child(2){
+    margin: 0;
+    font-size: 12px;
+    color: #EC5B24;
+    font-weight: 400;
+}
+.train-source-destination-book .source-duration-destination{
+   width: 100%;
+   max-width: 400px;
+   display: flex;
+   align-items:center;
+   justify-content: space-between;
+   text-align: center;
+   gap: 3px;
+}
+.train-source-destination-book .source p:nth-child(1), .train-source-destination-book .destination p:nth-child(1){
+   margin: 0;
+   font-size: 14px;
+   color: #EC5B24;
+   font-weight: 400;
+   line-height: 1;
+}
+.train-source-destination-book .source p:nth-child(2), .train-source-destination-book .destination p:nth-child(2){
+   margin: 6px 0px;
+   font-size: 20px;
+   color: #000000DE;
+   font-weight: 600;
+   line-height: 1;
+}
+.train-source-destination-book .source p:nth-child(3), .train-source-destination-book .destination p:nth-child(3){
+   margin:0px;
+   font-size: 12px;
+   color: #0000008A;
+   font-weight: 400;
+   line-height: 16px;
+}
+.train-source-destination-book .source-duration-destination .duration p{
+    margin:0px;
+    font-size: 12px;
+    color: #0000008A;
+    font-weight: 400;
+    line-height: 1;
+    text-align: center;
+}
+.train-source-destination-book .source-duration-destination .duration img{
+    min-width: 130px;
+    max-width: 160px;
+    object-fit: cover;
+    height: 10px;
+}
+.train-source-destination-book .book{
+   width: 100%;
+   max-width: 200px;
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+}
+.train-source-destination-book .book button{
+    border: none;
+    color: #fff;
+    font-size: 12px;
+    letter-spacing: 0.3px;
+    padding: 10px 14px;
+    height: 40px;
+    width: 90%;
+    border-radius: 2px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, .3);
+    font-weight: 600;
+    background-color: #ef7143;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.train-search-card .seats-classes{
+    padding-top: 20px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 10px;
+    flex-wrap: wrap;
+    border-top: 1px solid rgba(0, 0, 0, .1);
+    overflow: hidden;
+}
+.train-search-card .seats-classes .coach-fare{
+    border: 1px solid #CFE3BA;
+    background: #EEF5E6;
+    border-radius: 4px;
+    height: 55px;
+    padding: 8px 5px 5px;
+}
+.train-search-card .seats-classes .coach-fare p:first-child{
+    margin: 0;
+    color: #000000DE;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 25px;
+    text-align: center;
+   
+}
+.train-search-card .seats-classes .coach-fare p:nth-child(2){
+    margin: 0;
+    color: #008000;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 25px;
+    text-align: center;
+}
+.train-search-card .seats-classes button{
+    border: none;
+    color: #fff;
+    font-size: 12px;
+    letter-spacing: 0.3px;
+    padding: 8px;
+    height: 30px;
+    width: 100%;
+    border-radius: 2px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, .3);
+    font-weight: 500;
+    background-color: #ef7143;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.train-source-destination-book .book button:hover, .train-search-card .seats-classes button:hover{
+    background-color:#ec5b24;
+}
+    
+
+
+
+
+ @media screen and  (max-width:810px){
+     /* search box */
+     .train-search-box-searchPage .search-input-feilds .search-button{
+        padding: 10px;
+        font-size: 20px;
+     }
+
+     /* filters */
+     .train-filters{
+        flex-wrap: wrap;
+        padding: 0px 10px 10px 10px;
+     }
+     .train-filters .train-class p{
+        margin: 10px;
+     }
+     .train-filters .checkbox-list{
+        padding: 0px 10px;
+     }
+     .train-filters .train-quota p{
+        margin: 10px;
+     }
+     .train-filters .quota-list{
+        padding: 0px 10px;
+     }
+     .train-filters .train-time >div{
+        padding: 0px 10px;
+     }
+     .train-time .time-list > div div{
+        width: 75px;
+     }
+
+     /* sort */
+     .train-sort-container{
+        margin: 20px 5px;
+        padding: 10px 5px;
+     }
+     .train-sort-container div:first-child{
+        font-size: 12px;
+     }
+     .train-sort-container .sorting-option p{
+        padding: 0px 2px;
+        font-size: 12px;
+     }
+
+
+
+     /* search card */
+     .train-search-card{
+        margin: 20px 5px;
+        padding: 5px;
+     }
+     .train-search-card .train-source-destination-book{
+        padding: 5px 0px 15px;
+     }
+     .train-source-destination-book .train{
+        /* max 180px  min - 110 */
+        max-width: 210px;
+        min-width: 90px;
+     }
+     .train-source-destination-book .train .flex-runsOn{
+        flex-wrap: wrap;
+     }
+     .train-source-destination-book .train >p{
+        font-size: 14px;
+     }
+     .train-source-destination-book .source-duration-destination{
+        /* max-width: 250px;  min-width: 160px */
+        max-width: 300px;
+        min-width: 190px;
+     }
+     .train-source-destination-book .source p:nth-child(1), .train-source-destination-book .destination p:nth-child(1){
+        font-size: 12px;
+        line-height: 1.2;
+        font-weight: 500;
+     }
+     .train-source-destination-book .source p:nth-child(2), .train-source-destination-book .destination p:nth-child(2){
+        font-size: 16px;
+     }
+     .train-source-destination-book .source-duration-destination .duration p{
+        font-size: 10px;
+        font-weight: 500;
+     }
+     .train-source-destination-book .source-duration-destination .duration img{
+        width: 50px;
+        min-width:unset;
+        height: 8px;
+     }
+     .train-source-destination-book .book{
+        min-width: 50px;
+        max-width: 100px;
+     }
+     .train-source-destination-book .book button{
+        width: 100%;
+        padding: 5px 2px;
+        /* height: 35px; */
+        margin-left: 5px;
+     }
+ }
+ /* ,"arrivalTime":{"$lte":"06:00","$gte":"12:00"} */
+ /* https://academics.newtonschool.co/api/v1/bookingportals/train?search={"source":"Delhi Junction","destination":"Salem Junction"}&day=Mon&filter={"coaches.coachType":"3A","coaches.coachType":"SL","departureTime":{"$lte":"12:00","$gte":"06:00"},"arrivalTime":{"$gte":"18:00","$lte":"23:00"}}&sort={"arrivalTime":1} */
+ /* https://academics.newtonschool.co/api/v1/bookingportals/train?search={"source":"Delhi Junction","destination":"Salem Junction"}&day=Mon&filter={"coaches.coachType":["CC","3E"]} */

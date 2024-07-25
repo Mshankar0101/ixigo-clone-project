@@ -1,0 +1,133 @@
+.header{
+    padding: 0px 20px;
+    background-color: white;
+    border-bottom: rgb(0, 0, 0, 0.2) ridge 0.5px;
+}
+.header-main{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+    background-color: white;
+}
+
+.header-content-div a{
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #17181C;
+    
+}  
+.header-content-div img{
+    height: 30px;
+    width: fit-content;
+    margin-right: 2px;
+}
+.header-content-div{
+    display: flex;
+    height: 24px;
+    margin: 0px;
+    justify-content: space-between;
+    gap: 20px;
+    padding-left: 10px;
+}
+.header-content{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 0px;
+  gap: 3rem;
+}
+.header-signin{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0px;
+    gap: 2px;
+}
+.header-signin img{
+    height: 30px;
+    width: fit-content; 
+    cursor: pointer;
+}
+.header-signin button{
+    border: none;
+    background: none;
+    font: inherit;
+    cursor: pointer;
+    padding: 0px;
+}
+.header-signin div:first-child{
+    display: flex;
+    background-color: #D9EBFF;
+    height:40px;
+    width: 40px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    margin-right: 2px;
+}
+
+/* logout style */
+.header-signin .logoutButton p{
+    margin: 0px;
+    font-size: 18px;
+    font-weight: 500;
+    text-overflow: ellipsis;
+  
+}
+.header-signin .logoutButton button{
+    border: none;
+    background-color: rgba(88, 82, 82, 0.2);
+    color: black;
+    width: 100%;
+    height: 35px;
+    border-radius: 5px;
+    cursor: pointer;
+    /* box-shadow: 0 0 10px 0 rgba(0, 0, 0, .2); */
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 5px -1px, 
+                rgba(0, 0, 0, 0.08) 0px 5px 8px 0px,
+                rgba(0, 0, 0, 0.1) 0px 1px 5px 0px; 
+    padding: 0px 5px;
+    box-sizing: border-box;
+}
+.header-signin .logoutButton button:hover{
+    /* background-color: rgb(252, 121, 13) ; */
+    /* color: #0a0a0a; */
+  
+    background-color: #000;
+    color: white;
+}
+
+.fixed{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.header-logo{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 0px;
+}
+
+
+@media screen and (max-width: 1048px) and (min-width: 765px){
+    .header{
+        padding: 0px 10px;
+    }
+    .header-content-div{
+        gap: 10px;
+    }
+    .header-content{
+        gap: 0.6rem;
+    }
+    .header-logo .ixigo-logo{
+        width: 60px;
+    }
+    .header-main{
+        font-size: 14px;
+    }
+}

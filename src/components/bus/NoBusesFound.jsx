@@ -1,0 +1,66 @@
+import React from 'react'
+// import { FaRoute } from "react-icons/fa6";
+// import { TbBusOff } from "react-icons/tb";
+import busStop from '../../images/busStop.png';
+
+const NoBusesFound = () => {
+    const main = {
+        padding:'0px 20px',
+        display:'flex',
+        alignItems:'center',
+        justifyContent:'center',
+        flexDirection:'column',
+        width:'100%',
+        margin:'0px',
+        boxSizing:'border-box',
+        paddingBottom:'20px'
+       }
+     const para = {
+       textAlign:'center',
+       marginBottom:'1rem',
+       fontSize:'16px',
+       lineHeight:'1.4',
+       margin:'0px',
+       fontWeight:'500'
+      }
+      const paraTwo = {
+        textAlign:'center',
+        marginBottom:'1rem',
+        fontSize:'16px',
+        lineHeight:'1.4',
+        margin:'0px',
+        color:'#5E616E',
+        fontWeight:'500'
+       }
+   
+      const div = {
+        display:'flex',
+        alignItems:'center',
+        justifyContent:'center',
+        gap: '20px',
+        width: '100%',
+        maxWidth:'500px',
+        height:'400px',
+        margin:'20px 0px',
+        backgroundColor:'#fff',
+        borderRadius: '20px',
+      }
+    
+     return (
+       <div style={main}>
+          <div style={div} >
+           <img alt='page not found' style={{height:'100%',width:'100%',objectFit:'cover'}} src={busStop} />
+          </div>
+          <div style={{width:'100%',marginBottom:'20px'}} >
+            <p style={para}>
+            Oops! No Buses Found
+           </p>
+            <p style={paraTwo}>
+              Please fill search feilds again and search.
+           </p>
+          </div>
+       </div>
+    )
+}
+
+export default NoBusesFound

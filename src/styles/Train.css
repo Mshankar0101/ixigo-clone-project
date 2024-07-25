@@ -1,0 +1,522 @@
+.train-home-page{
+    background-color:#f2f2f2;
+    padding-bottom: 15px;
+}
+.train-banner{
+    width: 100%;
+    height: 550px;
+    position: relative;
+}
+.train-banner img{
+    width: 100%;
+    height: 550px;
+    object-fit:cover;
+}
+.train-banner .banner-line{
+    width: 100%;
+    position: absolute;
+    top: 150px;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+}
+.train-banner .banner-line > img{
+   height: 71px;
+   width: 71px;
+}
+.train-banner .banner-line h1{
+    margin: 0px;
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+/* train search box */
+.train-search-box{
+   position: absolute;
+   top: 300px;
+   height: auto;
+   padding: 15px 0px;
+   width: 100%;
+   background-color: white;
+   max-width: 1280px;
+   left: 50%;
+   transform: translateX(-50%);
+  
+}
+.search-input-feilds{
+    /* padding: 15px 0px; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5rem;
+    /* height: 60px; */
+}
+
+.train-search-feild-container{
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+    padding: 0px 15px;
+}
+.train-search-feild-relative{
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+    padding: 0px 15px;
+    position: relative;
+}
+.train-search-box .inputTextTrain, .train-search-box .react-datepicker__input-container input{
+    border-style: none;
+    background-color: rgba(244,245,245,1);
+    width: 100%;
+    height: 60px;
+    cursor: pointer;
+    color: #17181c;
+    font-size: 18px;
+    font-weight: 520;
+    padding: 0px 15px 0px 17px;
+    margin-top: 5px;
+    line-height: 1.2;
+}
+.train-search-box .search-input-feilds .leftRoundBorder{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.train-search-box .search-input-feilds .search-button{
+    padding: 10px 15px;
+    border-style: none;
+    width: 100%;
+    /* height: 100%; */
+    height: 60px;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 24px;
+    border-top-right-radius:10px;
+    border-bottom-right-radius: 10px;
+    background-color: rgb(252,121,13);
+    color: #ffffff;
+    margin-top: 5px;
+}
+.train-search-box .search-input-feilds input:hover{
+    background-color:#e4e7e7 ;
+} 
+.train-search-box .search-input-feilds .search-button:hover{
+   background-color: #e36802;
+}
+.train-search-box .search-input-feilds input:focus{
+    outline: none;
+    border-bottom: 4px solid #0770E4;
+} 
+.floating-label-train{
+    position: absolute;
+    pointer-events: none;
+    left: 35px;
+    top: 16px;  
+    transition: 0.2s ease all;
+    font-weight: 400; 
+    font-size: 16px;
+    color: #5E616E;
+  }
+  input:focus ~ .floating-label-train,
+input:not(:focus):valid ~ .floating-label-train{
+  top: 6px;
+  bottom: 10px;
+  left: 29px;
+  font-size: 11px;
+  opacity: 1;
+  color: #0770E4;
+}
+
+.swap-icon-div{
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    /* padding: 0px 5px 0px 5px; */
+    top: 20px;
+    left: -2%;
+    z-index: 10;
+    border-radius: 50%;
+    background-color:white;
+    box-shadow: 0px 4px 10px rgba(0,0,0,.2);
+    cursor: pointer; 
+    
+}
+.swap-icon{
+    height: 20px;
+    width: 20px;
+    padding-top: 5px;
+    padding-left: 5px;
+    background-color:white;
+    color: rgba(0,0,0,1);
+    border-radius: 50%;
+}
+
+.train-search-box .description{
+    background-image: url("https://images.ixigo.com/image/upload/fcRelated/248ab5019f1b1852f028dc376c786d3c-zrgqg.png");
+    height: 80px;
+    padding: 12px 12px 0px;
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+.train-search-box .description div:first-child{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.train-search-box .description div:first-child img{
+    height: 20px;
+    width: 16px;
+}
+.train-search-box .description div:first-child p{
+    margin: 0;
+    font-size:18px;
+    font-weight: 500;
+    color: rgb(0,0,0,0.8);
+}
+.train-search-box .description div:first-child input{
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+}
+.train-search-box .description div:nth-child(2) p{
+   margin: 0;
+   margin-top: 10px;
+   margin-bottom: 5px;
+   font-size: 16px;
+   color: rgb(0,0,0,0.6);
+   font-weight: 400;
+   line-height: 1.4;
+   text-align: center;
+}
+
+/* train card section  */
+.train-cards-section{
+    padding: 0px 40px 20px;
+    margin: 40px 0px;
+    background-color: #f2f2f2;
+}
+.train-cards-section h1{
+   margin: 50px 0px 0px;
+   text-align: center;
+   line-height: 2;
+}
+.train-cards-section .irctc-logo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+  /* margin-top: 5px; */
+}
+.train-cards-section .irctc-logo h3{
+  margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+}
+.train-cards-section .irctc-logo img{
+    height: 50px;
+    width: 50px;
+}
+.train-cards-section .promises-support{
+    margin: 0px 25px;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+}
+.train-cards-section .promises-support .flex-main{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.train-cards-section .promises-support .flex{
+   display: flex;
+   align-items: center;
+   justify-content: flex-start;
+   gap: 10px;
+   width: 100%;
+}
+.train-cards-section .promises-support .flex img{
+    height: 70px;
+    width: 70px;
+}
+.train-cards-section .promises-support .flex p{
+   margin: 0;
+   font-size: 20px;
+   font-weight: 700;
+}
+
+.train-cards-section .train-book-meal{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   gap: 10px;
+   margin-top: 20px;
+}
+.train-book-meal .icon-title{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+}
+.train-book-meal .icon-title img{
+    height: 76px;
+    width: 76px;
+}
+.train-book-meal .icon-title p:first-child{
+    margin: 0;
+    font-size: 20px;
+    font-weight: 500;
+}
+.train-book-meal .icon-title p:nth-child(2){
+    margin: 0;
+    font-size: 14px;
+    font-weight: 400;
+    color: #898380;
+}
+.train-book-meal .two-buttons{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+}
+.train-book-meal .two-buttons button:first-child{
+    border-style: none;
+    border: 1px solid #EC5B24;
+    background-color: white;
+    color: #EC5B24;
+    padding: 8px;
+    height: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.train-book-meal .two-buttons button:first-child:hover{
+    background-color: #EC5B24;
+    color: white;
+}
+.train-book-meal .two-buttons button:nth-child(2){
+    border-style: none;
+    background-color: #EC5B24;
+    color: white;
+    padding: 8px 14px;
+    height: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.train-book-meal .two-buttons button:nth-child(2):hover{
+    background-color: #ee4907bd;
+}
+
+/* offer container */
+.crousel-train{
+    height: 265px;
+    padding: 30px 20px;
+    background-color:rgba(255,255,255,0.8);
+    box-shadow:0 0 10px 0 rgba(0, 0, 0, .2); 
+    margin: 0px 10px;
+    border-radius: 2px;
+   
+}
+.crousel-train h2{
+    font-weight: 700;
+    font-size: 20px;
+    margin: 0px;
+    line-height: 1.2
+    
+}
+
+
+/* station dropdown container */
+.station-dropdown-container{
+    position: absolute;
+    display: block;
+    z-index: 200;
+    min-height: 150px;
+    max-height: 450px;
+    top: 70px;
+    /* width: 375px; */
+    width: 300px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0px 4px 30px -5px rgba(0,0,0,.25);
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    /* padding: 0px 20px; */
+   
+}
+.station-dropdown-container::-webkit-scrollbar{
+    display: none;
+ } 
+ .station-dropdown-container li{
+    list-style: none;
+    display: flex;
+    height: 70px;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 15px 20px;
+    gap: 15px;
+    cursor: pointer;
+    border-bottom: 1px solid #e5e7eb;
+    box-sizing: border-box;
+    color: rgba(23,24,28,1);
+    overflow: hidden;
+ }
+ .station-dropdown-container .cityIcon{
+    display: inline-flex;
+    height: 40px;
+    width: 40px;
+    border:1px solid #e5e7eb;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(244, 245, 245, 1);
+    /* padding: 1px 0px; */
+ }
+ .station-dropdown-container .cityIcon svg{
+    height: 30px;
+    width: 30px;
+ }
+ .station-dropdown-container .name{
+     height: 40px;
+ }
+ .station-dropdown-container .name p{
+    margin: 0px;
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: 500;
+    margin-top: 8px;
+ }
+.popular-stations p{
+    margin: 0px;
+    line-height: 1.2;
+    font-size: 18px;
+    padding: 15px 20px 5px 20px;
+    font-weight: 500;
+}
+.station-dropdown-container ul{
+    padding: 0px;
+    margin: 0px;
+}
+.station-dropdown-container li:hover{
+    background-color: rgba(244,245,245,1);
+}
+
+
+
+
+
+
+
+
+
+
+@media screen and  (max-width:600px){
+    /* banner */
+    .train-banner .banner-line > img{
+        height: 50px;
+        width: 50px;
+     }
+    .train-banner .banner-line h1{
+        font-size: 21px;
+    }
+
+    /* search box */
+    .train-search-box .search-input-feilds .search-button{
+        font-size: 20px;
+        padding: 10px;
+    }
+    .train-search-box .description div:first-child p{
+         font-size: 16px;
+    }
+    .train-search-box .description div:nth-child(2) p{
+        margin-top: 5px;
+        font-size: 14px;
+        line-height: 1;
+    }
+    
+
+    /* card section */
+    .train-cards-section h1{
+        font-size: 22px;
+        line-height: 1.2;
+    }
+    .train-cards-section .irctc-logo{
+        margin-top: 5px;
+    }
+    .train-cards-section .irctc-logo h3{
+      font-size: 16px;
+    }
+    .train-cards-section .irctc-logo img{
+        height: 30px;
+        width: 30px;
+    }
+    .train-cards-section .promises-support .flex{
+        gap: 15px;
+    }
+    .train-cards-section .promises-support .flex-main{
+       flex-direction: column;
+       gap: 20px;
+    }
+    .train-cards-section .promises-support .flex img{
+        height: 50px;
+        width: 50px;
+    }
+    .train-cards-section .promises-support .flex p{
+       font-size: 18px;
+       font-weight: 600;
+    }
+
+    /* book meal */
+    .train-cards-section .train-book-meal{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .train-book-meal .icon-title img{
+        height: 60px;
+        width: 60px;
+    }
+    .train-book-meal .icon-title p:first-child{
+        font-size: 18px;
+    }
+    .train-book-meal .two-buttons{
+        justify-content: center;
+        gap: 10px;
+    }
+    .train-book-meal .two-buttons button:first-child{
+        padding: 5px;
+        height: 35px;
+    }
+    .train-book-meal .two-buttons button:nth-child(2){
+        padding: 5px 7px;
+        height: 35px;
+    }
+
+
+    /* stations suggetion container */
+    .station-dropdown-container{
+        width: 280px;
+        left: -1px;
+    }
+    .station-dropdown-container li{
+        padding: 10px 15px;
+    }
+    .react-datepicker{
+        width: 250px;
+    }
+
+    /* footer */
+    .train-home-page footer{
+        padding: 20px 10px;
+    }
+    .train-home-page footer h3{
+        font-size: 20px;
+    }
+}

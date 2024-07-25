@@ -1,0 +1,694 @@
+.bus-search-page{
+    margin: 0px;
+    /* position: relative; */
+    width: 100%;
+    background-color: #F2F2F2;
+   
+}
+
+.bus-sort{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    /* margin: 10px auto; */
+    margin: 20px auto 10px auto;
+    padding:20px 10px;
+    max-width: 1260px;
+    background-color: white;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+.bus-sort div{
+    width: 100%;
+    height: 40px;
+    padding: 0px 2px;
+    border-left: 1px solid rgba(0,0,0,0.2);
+}
+.bus-sort div:first-child{
+    border-left: none;
+    color: #212121;
+    font-weight: 500;
+    font-size: 16px;
+    vertical-align: middle;
+    text-align: center;
+    margin-top: 10px;
+}
+.bus-sort div p{
+    margin: 0px;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+    letter-spacing: 1px;
+}
+.bus-sort div p:hover{
+    color:#FC790D
+}
+.bus-sort .second, .bus-sort .third, .bus-sort .fourth{
+    line-height: 40px;
+    color: #444444;
+    cursor: pointer;
+}
+
+.bus-sort .fifth, .bus-sort .sixth{
+    margin-top: 10px;
+    color: #444444;
+    cursor: pointer;
+}
+/* sort clicked style */
+.bus-sort .second-clicked, .bus-sort .third-clicked, .bus-sort .fourth-clicked{
+    line-height: 40px;
+    color: #DC6437;
+    font-weight: 500;
+}
+
+.bus-sort .fifth-clicked, .bus-sort .sixth-clicked{
+    margin-top: 10px;
+    color: #DC6437;
+    font-weight: 500;
+}
+
+
+.bus-filter-searchCard-main{
+   max-width: 1280px;
+    margin: 0px auto;
+}
+
+
+
+.bus-filter-searchCard{
+    display: flex;
+    /* width: 100%; */
+    justify-content: flex-start; 
+    gap: 10px;
+    margin: 0px 10px;
+    box-sizing: border-box;
+   
+}
+
+
+/* bus filter */
+.bus-filter{
+    width: 30%;
+    max-width: 300px;
+    min-width: 220px;
+    padding: 15px;
+    background-color: white;
+    border-radius: 10px;
+    height: 455px;
+}
+.bus-filter h3{
+    margin: 0px;
+    font-size: 18px;
+    font-weight: 500;
+}
+.bus-filter .bus-type{
+    padding: 10px;
+    background-color: #F4F4F4;
+    margin-bottom: 10px;
+}
+.bus-filter .bus-type > p{
+   margin: 0px;
+   font-size: 16px;
+   font-weight: 400;
+   line-height: 1.2;
+   margin-bottom: 10px;
+}
+.bus-type-list{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+}
+.bus-type-list > div{
+    height: 50px;
+    width: 55px;
+    background-color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.bus-type-list > div .acIcon, .bus-type-list > div .non-ac-icon{
+    height: 25px;
+    width: 25px;
+    margin: 2px 15px 0px;
+}
+/* clicked icon color */
+.bus-type-list > div .acIcon-clicked, .bus-type-list > div .non-ac-icon-clicked{
+    height: 25px;
+    width: 25px;
+    margin: 2px 15px 0px;
+    color: #DC6437;
+}
+.bus-type-list > div p{
+   font-size: 12px;
+   margin: 0px;
+   font-weight: 400;
+   color: rgb(94,97,110);
+   text-align: center;
+}
+
+
+/* price range */
+.bus-price-range{
+    padding: 10px;
+    background-color: #F4F4F4;
+    margin-bottom: 10px;
+}
+.bus-price-range > p{
+    margin: 0px;
+   font-size: 16px;
+   font-weight: 400;
+   line-height: 1.2;
+   margin-bottom: 10px;
+}
+.bus-filter-range-box{
+    max-width: 100%;
+    width: 100%;
+    /* position: relative; */
+}
+.bus-filter-range-box .price-display{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   gap: 10px;
+}
+.bus-filter-range-box .price-display p{
+    margin: 0px;
+    color: rgb(94,97,110);
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 600;
+}
+
+
+/* filter by departure time */
+.bus-filter-main{
+    /* padding: 20px 20px 30px 20px;  */
+    padding: 10px;
+    background-color: #F4F4F4;
+    margin-bottom: 10px;
+ }
+ .bus-filter-main .filter-time{
+     display: flex;
+     flex-direction: column;
+     gap: 10px;
+ 
+ }
+ .bus-filter-main .filter-time .departure{
+     font-size: 16px;
+     margin: 0px;
+     line-height: 1.4;
+     font-weight: 400;
+ }
+ .bus-filter-main .filter-time .morning-day-night{
+    display: flex;
+    /* flex-wrap: wrap; */
+    gap: 10px;
+    width: 100%;
+    padding-top: 10px;
+ }
+ .bus-filter-main .filter-time .icon-div{
+     padding: 0px 1px 4px 1px;
+     border: 1px solid rgb(214, 215, 219);
+     border-radius: 10px;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     width: 100%;
+     min-width: 90px;
+     height: 60px;
+     overflow: hidden;
+     cursor: pointer;
+     background-color: white;
+ }
+ .bus-filter-main .filter-time .icon-div-border{
+     padding: 0px 1px 4px 1px;
+     border: 1px solid #DC6437;
+     background-color: rgba(7, 112, 228, 0.2);
+     border-radius: 10px;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     width: 100%;
+     min-width: 90px;
+     height: 60px;
+     overflow: hidden;
+     cursor: pointer;
+ }
+ .bus-filter-main .filter-time .icon-div-border p:nth-of-type(1){
+     font-size: 14px;
+     line-height: 1.4;
+     font-weight: 500;
+     margin: 0px ;
+     color:#DC6437 ;
+ }
+ .bus-filter-main .filter-time .icon-div-border p:nth-of-type(2){
+     font-size: 12px;
+     line-height: 1.4;
+     font-weight: 500;
+     margin: 0px;
+     color: #DC6437;
+ }
+ .bus-filter-main .filter-time .icon-div-border img{
+     width: 24px;
+     height: 24px;
+ }
+ .bus-filter-main .filter-time .icon-div p:nth-of-type(1){
+     font-size: 14px;
+     line-height: 1.4;
+     font-weight: 500;
+     margin: 0px ;
+ }
+ .bus-filter-main .filter-time .icon-div p:nth-of-type(2){
+     font-size: 12px;
+     line-height: 1.4;
+     font-weight: 500;
+     margin: 0px;
+     color: rgb(94,97,110);
+ }
+ .bus-filter-main .filter-time .icon-div img{
+     width: 24px;
+     height: 24px;
+     margin-bottom: 1px;
+ }
+
+
+
+
+ /* search card */
+ .bus-searchCard-seats{
+    width: 100%;
+    max-width: 900px;
+    border-radius: 10px;
+    margin-right: 10px;
+    padding: 15px;
+    background-color: white;
+    box-shadow:0 0 10px 0 rgba(0, 0, 0, .1);
+    box-sizing: border-box;
+    margin-bottom: 20px;
+ }
+ .bus-searchCard{
+    width: 100%;
+    /* padding: 15px;
+    background-color: white; */
+    /* border-radius: 10px; */
+    /* margin-right: 10px; */
+    /* box-shadow:0 0 10px 0 rgba(0, 0, 0, .2); */
+    /* height: 135px; */
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    max-width: 900px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+ }
+ .bus-searchCard .name-rating-amenities{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    flex-direction: column;
+ }
+ .bus-searchCard .name-type h2{
+     font-size: 20px;
+     font-weight: 600;
+     margin: 0px;
+     color: #212121;
+     margin-bottom: 5px;
+ }
+ .bus-searchCard .name-type span{
+    font-size: 14px;
+     font-weight: 500;
+     margin: 0px;
+     color: #b0b0b0;
+     /* margin-left: 10px; */
+     line-height: 100%;
+     vertical-align:text-top;
+     /* text-align: center; */
+ }
+ .bus-searchCard .rating-amenities > div:first-child{
+     width: 30px;
+    background-color: #61B00F;
+    padding: 5px 8px;
+    border-radius: 5px;
+ }
+ .bus-searchCard .rating-amenities > div:first-child span{
+    color: white;
+    font-size: 16px;
+    line-height: 16px;
+ }
+ .bus-searchCard .rating-amenities{
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    gap: 10px;
+ }
+ .bus-searchCard .rating-amenities .amenities .amenties-border{
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    margin-bottom: 5px;
+ }
+ .bus-searchCard .rating-amenities .amenities span{
+     margin: 0px;
+     font-size: 14px;
+     font-weight: 400;
+     color: #DC6437;
+     line-height: 1.2;
+     vertical-align:text-top;
+ }
+ .amenities-icon{
+    height: 20px;
+    width: 20px;
+    color: #DC6437;
+ }
+
+ /* source duration destination */
+ .bus-source-destination-book{
+    width: 57%;
+ }
+ .bus-source-destination-book .source-duration-destination{
+    width: 100%;
+    max-width: 495px;
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    text-align: center;
+    gap: 3px;
+ }
+ .bus-source-destination-book .source p:nth-child(1), .bus-source-destination-book .destination p:nth-child(1){
+    margin: 0;
+    font-size: 14px;
+    /* color: #EC5B24; */
+    color: #868686;
+    font-weight: 400;
+    line-height: 1;
+ }
+ .bus-source-destination-book .source p:nth-child(2), .bus-source-destination-book .destination p:nth-child(2){
+    margin: 6px 0px;
+    font-size: 20px;
+    color: #000000DE;
+    font-weight: 600;
+    line-height: 1;
+ }
+ .bus-source-destination-book .source p:nth-child(3), .bus-source-destination-book .destination p:nth-child(3){
+    margin:0px;
+    font-size: 12px;
+    /* color: #0000008A; */
+    color: #868686;
+    font-weight: 400;
+    line-height: 16px;
+ }
+ .bus-source-destination-book .source-duration-destination .duration p{
+     margin:0px;
+     font-size: 12px;
+     color: #444;
+     font-weight: 400;
+     line-height: 1;
+     text-align: center;
+ }
+ .bus-source-destination-book .source-duration-destination .duration img{
+     min-width: 130px;
+     max-width: 160px;
+     object-fit: cover;
+     height: 10px;
+ }
+ .bus-card-price-book{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 20px;
+ }
+ .bus-card-price-book div:first-child p{
+    margin: 0px;
+    color: #212121;
+    font-size: smaller;
+    text-align: right;
+ }
+ .bus-card-price-book div:first-child h2{
+    margin: 0px;
+    color: #212121;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.2;
+ }
+ .bus-card-price-book div:nth-child(2) button{
+    width: 107px;
+    border-style:none ;
+    background-color: #dc6437;
+    border-radius: 5px;
+    font-size: .875rem;
+    padding: .5rem 1rem;
+    color: #fff;
+    cursor: pointer;
+ }
+ .bus-card-price-book div:nth-child(2) p{
+    margin: 0px;
+    font-size: smaller;
+    color: #868686;
+    text-align: center;
+
+ }
+
+/* seats card */
+.bus-available-seats{
+    width: 100%;
+    background-color: #f8f8f8;
+    border-radius: 5px;
+    padding: 5px 5px 0px;
+    box-sizing: border-box;
+}
+.bus-available-seats > p:first-child{
+   margin: 0px;
+   font-size: 16px;
+   font-weight: 500;
+   line-height: 1.2;
+   color: #212121;
+   margin-bottom: 5px;
+}
+.bus-available-seats > p:nth-child(2){
+   margin: 0px;
+   font-size: 14px;
+   color: #B0B0B0;
+}
+.bus-available-seats .select-seats{
+    padding: 10px 5px ;
+    width: 100%;
+    box-sizing: border-box;
+}
+.available-seats-upper, .available-seats-lower{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 5px;
+    border: 0.5px solid rgba(0, 0, 0, .1);
+    padding: 10px 0px;
+    background-color: white;
+    margin:0px auto 10px;
+    max-width: 600px;
+}
+.available-seats-upper .upper, .available-seats-lower .lower {
+    width: 35px;
+    height: 120px;
+    border-right: 0.5px solid rgba(0, 0, 0, .1);
+}
+.available-seats-lower .lower{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.available-seats-upper .upper p {
+    margin: 0px;
+    color: #212121;
+    rotate:180deg;
+    writing-mode:vertical-rl;
+    font-size: 16px;
+    font-weight: 400;
+    height: 120px;
+    margin-left: 5px;
+}
+.available-seats-lower .lower p{
+    margin: 0px;
+    color: #212121;
+    rotate:180deg;
+    writing-mode:vertical-rl;
+    font-size: 16px;
+    font-weight: 400;
+    /* height: 120px; */
+}
+.available-seats-upper .two-rows, .available-seats-lower .two-rows{
+   /* width: 500px; */
+   width: 300px;
+   height: 60px;
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+   flex-wrap: wrap;
+   margin-bottom: 30px;
+}
+.available-seats-upper .single-row, .available-seats-lower .single-row{
+   width: 300px;
+   height: 30px;
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+   flex-wrap: wrap;
+}
+.available-seats-lower .steeringIcon{
+    width: 30px;
+    height: 30px;
+    color: rgb(122, 122, 122);
+}
+
+.bus-available-seats .price-payment{
+    width: 100%;
+    height: 68px;
+    background-color: white;
+    position: relative;
+
+}
+.bus-available-seats .price-payment p{
+    margin: 0px;
+    line-height: 1.4;
+    margin-bottom: 5px;
+    position: absolute;
+    right: 2px;
+    top: 0;
+}
+.bus-available-seats .price-payment span{
+    font-size: 20px;
+    font-weight: 700;
+}
+.bus-available-seats .price-payment button{
+    border-style:none ;
+    background-color: rgb(252, 121, 13);
+    border-radius: 5px;
+    padding: 10px 8px;
+    color: white;
+    position: absolute;
+    right: 2px;
+    bottom: 0;
+    cursor: pointer;
+}
+
+
+@media only screen and (max-width: 530px){
+    .bus-filter-searchCard{
+        margin: 0px 2px;
+    }
+    .bus-searchCard{
+        gap: 3px;
+    }
+    .bus-searchCard-seats{
+        padding: 5px;
+        /* margin-left: 0px; */
+        margin-right: 0px;
+    }
+    .bus-searchCard .name-rating-amenities{
+        max-width: 90px;
+    }
+    .bus-searchCard .name-type h2 {
+        font-size: 14px;
+    }
+    .bus-searchCard .rating-amenities{
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    .css-84kixm-MuiPaper-root-MuiAccordion-root{
+        width: 93px !important;
+     }
+     .bus-card-price-book div:first-child h2{
+        font-size: 18px;
+        text-align: right;
+     }
+     .bus-card-price-book div:nth-child(2){
+        position: relative;
+        height: 70px;
+     }
+     .bus-card-price-book div:nth-child(2) button{
+        width: 83px;
+        padding: 0.5rem 0.2rem;
+        position: absolute;
+        right: 0;
+        top: 0;
+     }
+     .bus-card-price-book div:nth-child(2) p {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+     }
+
+     
+}
+
+
+@media only screen and (max-width: 754px){
+    /* sort */
+    .bus-sort div:first-child{
+        margin-top: 0px;
+    }
+    .bus-sort .fifth, .bus-sort .sixth{
+        margin-top: 0px;
+    }
+    .bus-sort .fifth-clicked, .bus-sort .sixth-clicked{
+        margin-top: 0px;
+    }
+
+
+    /* search card and filter container */
+    .bus-filter-searchCard{
+        flex-direction: column;
+    }
+
+    .bus-filter{
+        width: 90%;
+        max-width: 360px;
+       
+    }
+
+    /* source duration destination */
+    .bus-source-destination-book .source-duration-destination{
+        max-width: 300px;
+        min-width: 190px;
+     }
+     .bus-source-destination-book .source p:nth-child(1), .bus-source-destination-book .destination p:nth-child(1){
+        font-size: 12px;
+        line-height: 1.2;
+        font-weight: 500;
+     }
+     .bus-source-destination-book .source p:nth-child(2), .bus-source-destination-book .destination p:nth-child(2){
+        font-size: 16px;
+     }
+     .bus-source-destination-book .source-duration-destination .duration p{
+        font-size: 10px;
+        font-weight: 500;
+     }
+     .bus-source-destination-book .source-duration-destination .duration img{
+        width: 50px;
+        min-width:unset;
+        height: 8px;
+     }
+}
+
+@media (min-width: 755px) and (max-width: 880px){
+    .bus-searchCard .rating-amenities{
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+     .bus-source-destination-book .source-duration-destination .duration img{
+        width: 50px;
+        min-width:unset;
+        height: 8px;
+     } 
+
+
+     /* .css-84kixm-MuiPaper-root-MuiAccordion-root{
+
+     } */
+}

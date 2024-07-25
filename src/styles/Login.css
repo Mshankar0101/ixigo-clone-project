@@ -1,0 +1,111 @@
+.login-signup-modal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: 620px;
+    max-width: 800px;
+    /* max-height: 630px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+}
+
+.login-signup-poster{
+   width: 40%;
+   height: 100%;
+   max-width: 350px;
+   min-width: 140px;
+}
+.login-signup-poster img{
+   width: 100%;
+   height: 100%;
+   object-fit: fill;
+}
+.login-signup-container{
+  width: 100%;
+  height: 620px;
+  background-color: white;
+  box-sizing: border-box;
+}
+.login-signup-container> div{
+    width: 100%;
+    height: 620px;
+    max-width: 356px;
+    min-width: 150px;
+    margin: 0px auto;
+    padding: 20px 10px 20px;
+    box-sizing: border-box;
+}
+.login-signup-switch{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 55px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.login-signup-switch> div{
+    width: 50%;
+    height: 55px;
+}
+.login-signup-switch> div > p{
+    margin: 0px;
+    font-size: 14px;
+    line-height: 55px;
+    text-align: center;
+    vertical-align: middle;
+    color: #00000099;
+    font-weight: 500;
+}
+.login-signup-switch> div .active-switch{
+    color: #EC5B24;
+    border-bottom: 2px solid #ec581e;
+}
+
+.login-box h2, .signup-box h2{
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #17181C;
+}
+.login-feilds, .signup-feilds{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: flex-start;
+}
+.login-signup-container .css-1eed5fa-MuiInputBase-root-MuiInput-root::after{
+    border-bottom: 2px solid #EC5B24 !important;
+}
+.login-feilds button, .signup-feilds button{
+    border: none;
+    width: 100%;
+    height: 50px;
+    background-color: #EC5B24;
+    padding: 8px 20px;
+    border-radius: 2px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff; 
+    cursor: pointer;
+    box-sizing: border-box;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 5px -1px, 
+                rgba(0, 0, 0, 0.14) 0px 5px 8px 0px,
+                rgba(0, 0, 0, 0.12) 0px 1px 14px 0px; 
+}
+
+.login-signup-container> div .terms{
+   margin-top: 30px;
+
+}
+.login-signup-container> div .terms p{
+    margin: 0px;
+    font-size: 12px;
+    font-weight: 400;
+    color: #000000BD;
+}
+

@@ -1,0 +1,152 @@
+.offer-on-booking-flight-heading{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.offer-on-booking-flight-heading h3{
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.2;
+    margin: 0px;
+}
+.offer-on-booking-flight-heading p{
+    margin: 0px;
+    font-size: 14px;
+    line-height: 1.4;
+    color: rgb(252,121,13);
+    font-weight: 500;
+    padding-right: 15px;
+    cursor: pointer;
+}
+.offer-on-booking-flight{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+.offer-on-booking-flight .input-div-offer{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   /* gap: 5px; */
+}
+.offer-on-booking-flight .input-div-offer input[type="radio"]{
+    appearance: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-clip: content-box;
+    border: 1px solid rgb(94,97,110);
+    cursor: pointer;
+}
+.offer-on-booking-flight .input-div-offer input[type="radio"]:checked{
+    background-color: rgba(7,112,228,1);
+    padding: 4px;
+    border: 1px solid rgba(7,112,228,1);
+}
+.offer-on-booking-flight .coupen-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+}
+.offer-on-booking-flight .coupen-price p{
+    margin: 0px;
+    font-size: medium;
+    font-weight: 500;
+}
+.offer-on-booking-flight .offer-description p{
+   margin: 0px;
+   font-size: 14px;
+   line-height: 1.4;
+   font-weight: 500;
+   color: #238C46;
+}
+.offer-on-booking-flight .offer-description a{
+    pointer-events:'none';
+    font-size: 14px;
+    line-height: 1.4;
+    font-weight: 500;
+    color: #17181C;
+}
+.fare-summary-flight .flex-fare{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   gap: 10px;
+   margin-top: 11px;
+}
+.fare-summary-flight .flex-fare h3{
+   font-weight: 700;
+   font-size: 20px;
+   line-height: 1.2;
+   margin: 0px;
+}
+.fare-summary-flight .flex-fare p:first-child{
+    margin: 0px;
+    font-size: 16px;
+    line-height:1.4;
+    font-weight: 400;
+}
+.fare-summary-flight .flex-fare p:nth-child(2){
+    margin: 0px;
+    font-size: 16px;
+    line-height:1.4;
+    font-weight: 500;
+}
+.rules-privacy-policy p{
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: 500;
+    color:#17181C;
+    padding-left: 20px;
+}
+.rules-privacy-policy a{
+    pointer-events: none;
+}
+.fligh-booking-contact-details h3{
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.2;
+    margin: 0px;
+}
+.fligh-booking-contact-details p{
+    color: #5E616E;
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: 500;
+    margin: 0px;
+}
+.flight-billing-address > h3{
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.2;
+    margin: 0px;
+    padding-top: 20px;
+    
+}
+.flight-billing-address > p{
+    color: #5E616E;
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: 500;
+    margin: 0px;
+}
+.flight-billing-address .gst-no{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 10px 0px;
+
+}
+.flight-billing-address .gst-no input[type=checkbox]{
+    height: 20px;
+    width: 20px;
+}
+.flight-billing-address .gst-no p{
+    margin: 0px;
+    font-size: 18px;
+    line-height: 1.4;
+
+}
