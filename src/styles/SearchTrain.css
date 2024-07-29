@@ -1,5 +1,9 @@
-.train-search-page{
+.train-search-page-background{
     background-color:#f2f2f2;
+}
+.train-search-page{
+    max-width: 1280px;
+    margin: 0px auto;
 }
 
 

@@ -82,6 +82,13 @@ export const STATE_CITIES =[
     { city: "Amritsar", state: "Punjab" },
     { city: "Allahabad", state: "Uttar Pradesh" },
     { city: "Gwalior", state: "Madhya Pradesh" },
+    { city: "Goa", state: "Goa" },
+    { city:'Ayodhya',state:'UTTAR PRADESH'},
+    { city:'Puri',state:'ODISHA'},
+    { city:'Guwahati',state:'ASSAM'},
+    { city:'Manali',state:'HIMACHAL PRADESH'},
+    { city:'Shimla',state:'HIMACHAL PRADESH'},
+    { city:'Ooty',state:'TAMIL NADU'}
   ]
 
 export const BUS_OFFERS = [
@@ -194,3 +201,132 @@ export const stationsArr= [
   {id:45, name:"Visakhapatnam Junction"},
   {id:46, name:"Warangal"}
 ] 
+
+export const POPULAR_DESTINATIONS =[
+    {
+      img:'https://images.ixigo.com/image/upload/f_auto/accommodations/popular-location-v2/dde2dd1fcb479de427de8d2ea142b589-jhisq.jpg',
+      city:'New Delhi',
+      state:'DELHI'
+    },
+    {
+      img:'https://images.ixigo.com/image/upload/f_auto/accommodations/popular-location-v2/b90de6368f4aa8ec7bc8ed017c8854ab-agxmk.jpg',
+      city:'Mumbai',
+      state:'MAHARASHTRA'
+    },
+    {
+      img:'https://images.ixigo.com/image/upload/f_auto/accommodations/popular-location-v2/6fd6c6f732fa41d2628befc44dae6dc9-fizcu.jpg',
+      city:'Goa',
+      state:'GOA'
+    },
+    {
+      img:'https://images.ixigo.com/image/upload/f_auto/accommodations/popular-location-v2/f12d03b22a387022e80991101a0ad94e-bttxc.jpg',
+      city:'Chennai',
+      state:'TAMIL NADU'
+    },
+    {
+      img:'https://images.ixigo.com/image/upload/f_auto/accommodations/popular-location-v2/12197f92305a7f21f93410c53833e4f8-nfboj.jpg',
+      city:'Kolkata',
+      state:'WEST BENGAL'
+    },
+    {
+      img:'https://images.ixigo.com/image/upload/f_auto/accommodations/popular-location-v2/051595de7e3d11e09c0d50e9cee88475-qobtm.jpg',
+      city:'Hyderabad',
+      state:'TELANGANA'
+    },
+    {
+      img:'https://images.ixigo.com/node_image/f_auto/entityId/503b2a95e4b032e338f14729.jpg',
+      city:'Bengaluru',
+      state:'Karnataka'
+    },
+    {
+      img:'https://images.ixigo.com/image/upload/f_auto/accommodations/popular-location-v2/e83be5f1f4fca3ae14f04c8b639fd124-tinbn.jpg',
+      city:'Jaipur',
+      state:'Rajasthan'
+    },
+    {
+      img:'https://images.ixigo.com/image/upload/f_auto/accommodations/popular-locations/4e084232898bd6e91579f6ced30d11ba-xygmo.jpg',
+      city:'Varanasi',
+      state:'UTTAR PRADESH'
+    },
+    {
+      img:'https://images.ixigo.com/image/upload/f_auto/accommodations/popular-location-v2/34ba35441a8c517def8a16d52df689d0-igvob.jpg',
+      city:'Pune',
+      state:'MAHARASHTRA'
+    },
+    {
+      img:'https://images.ixigo.com/image/upload/f_auto/accommodations/popular-locations/81a78e561f5987b0f1052c8f27b071fd-gmryb.webp',
+      city:'Ayodhya',
+      state:'UTTAR PRADESH'
+    },
+    {
+      img:'https://images.ixigo.com/image/upload/f_auto/accommodations/popular-location-v2/9cdb603b2097211fe72e2f2fd7414e67-nlmvf.jpg',
+      city:'Puri',
+      state:'ODISHA'
+    },
+    {
+      img:'https://images.ixigo.com/image/upload/f_auto/accommodations/popular-location-v2/ee2523a0e1e4a5ee7c03b7b11998245c-toqvb.jpg',
+      city:'LUCKNOW',
+      state:'UTTAR PRADESH'
+    },
+    {
+      img:'https://images.ixigo.com/image/upload/f_auto/accommodations/popular-location-v2/30f2db54ab34c2ec091fb73e30ea1cf0-jqkwp.jpg',
+      city:'Amritsar',
+      state:'PUNJAB'
+    },
+    {
+      img:'https://images.ixigo.com/image/upload/f_auto/accommodations/popular-location-v2/48c019b8ed21737ee44f0d3b365ea08a-qqigu.jpg',
+      city:'Guwahati',
+      state:'ASSAM'
+    },
+    {
+      img:'https://images.ixigo.com/image/upload/f_auto/accommodations/popular-location-v2/46b6bb554bd8c8010de05c8c0f1fe085-opeqr.jpg',
+      city:'Agra',
+      state:'UTTAR PRADESH'
+    },
+    {
+      img:'https://images.ixigo.com/image/upload/f_auto/accommodations/popular-locations/63a279e425dc79593c0f8259e3f31ca4-eahjx.jpeg',
+      city:'Shirdi',
+      state:'MAHARASHTRA'
+    },
+    {
+      img:'https://images.ixigo.com/image/upload/f_auto/accommodations/popular-locations/716110e6077ddc56ab3c290feaf44226-ytpot.jpg',
+      city:'Ahmedabad',
+      state:'GUJARAT'
+    },
+    {
+      img:'https://images.ixigo.com/image/upload/f_auto/accommodations/popular-location-v2/e20807bcfc19e6d9507aa8b3b422121e-eoquz.jpg',
+      city:'Tirupati',
+      state:'ANDHRA PRADESH'
+    },
+    {
+      img:'https://images.ixigo.com/image/upload/f_auto/accommodations/popular-location-v2/e81c33aaece67c1c960b5584d00d32fc-fsfoh.jpg',
+      city:'Manali',
+      state:'HIMACHAL PRADESH'
+    },
+    {
+      img:'https://images.ixigo.com/image/upload/f_auto/accommodations/popular-location-v2/839b81b08e16b9f4f09e2ec976fbc9ea-bfhyz.jpg',
+      city:'Shimla',
+      state:'HIMACHAL PRADESH'
+    },
+    {
+      img:'https://images.ixigo.com/image/upload/f_auto/accommodations/popular-locations/394b5710a383cc1650cc32516f18cbda-qktyq.jpg',
+      city:'Visakhapatnam',
+      state:'ANDHRA PRADESH'
+    },
+    {
+      img:'https://images.ixigo.com/image/upload/f_auto/accommodations/popular-locations/37a1f5e05ed77effa2bc6eb1a48e516c-bdghy.jpeg',
+      city:'Katra',
+      state:'JAMMU AND KASHMIR'
+    },
+    {
+      img:'https://images.ixigo.com/image/upload/f_auto/accommodations/popular-location-v2/c52f879cf26f55cca204a77da56059a5-kkfox.jpg',
+      city:'Patna',
+      state:'BIHAR'
+    },
+    {
+      img:'https://images.ixigo.com/image/upload/f_auto/accommodations/popular-location-v2/f7ea20d19978a5d8ea749da19935a551-trnqx.jpg',
+      city:'Ooty',
+      state:'TAMIL NADU'
+    }
+]
+

@@ -17,6 +17,7 @@ import img3 from '../../images/img3.webp';
 import img4 from '../../images/img4.webp';
 import img5 from '../../images/img5.webp';
 import Footer from '../Footer.jsx';
+import {POPULAR_DESTINATIONS} from '../../components/data.js'
 
 const Hotels = () => {
   // date picker 
@@ -49,6 +50,7 @@ const Hotels = () => {
     .catch((err)=> console.log(err));
  }
     useEffect(()=>{  
+      window.scroll(0,0);
         fetchOffers(); 
         // console.log(offer);
     },[]);
@@ -56,7 +58,7 @@ const Hotels = () => {
 
 
 
-     //logic for next prev btn offer section
+     //logic for next prev btn popular destination
   const [button, setButton]= useState({prev:false,next:true});
   const popularRef= useRef();
   useEffect(() => {
@@ -161,6 +163,27 @@ const Hotels = () => {
         navigate('search',{state:data});
       }
    }
+
+
+  //  handle popular destination click
+  const [isDestinationUpdated, setIsDestinationUpdated]= useState(false);
+  const handlePopularDestinationClick = (destination)=>{
+   if(destination.city === 'New Delhi'){
+      setDestination({city:"Delhi", state:'Delhi'});
+    }else if(destination.city === "Patna"){
+      setDestination({city:"Patna, Bihar", state:'Bihar'});
+    }else{
+      setDestination(destination);
+    }
+    setIsDestinationUpdated(true);
+  }
+
+  useEffect(()=>{
+    if(isDestinationUpdated){
+      setIsDestinationUpdated(false);
+      handleSearchSubmission()
+    }
+  },[isDestinationUpdated])
 
     // useEffect(()=>{
     //   console.log("destination",destination);
@@ -332,182 +355,22 @@ const Hotels = () => {
        <div  className='hotel-popular-destination'>
            <h2>Popular Destinations</h2>
            <div className='img-container'  ref={popularRef}>
-              <div >
-                <img src='https://images.ixigo.com/image/upload/f_auto/accommodations/popular-location-v2/dde2dd1fcb479de427de8d2ea142b589-jhisq.jpg' alt='new delhi' />
-                <div className='absolute-popular-destination'>
-                  <h3>New Delhi</h3>
-                  <p>DELHI</p>
-                </div>
-              </div>
-              <div >
-                <img src='https://images.ixigo.com/image/upload/f_auto/accommodations/popular-location-v2/b90de6368f4aa8ec7bc8ed017c8854ab-agxmk.jpg' alt='new delhi' />
-                <div className='absolute-popular-destination'>
-                  <h3>Mumbai</h3>
-                  <p>MAHARASHTRA</p>
-                </div>
-              </div>
-              <div >
-                <img src='https://images.ixigo.com/image/upload/f_auto/accommodations/popular-location-v2/6fd6c6f732fa41d2628befc44dae6dc9-fizcu.jpg' alt='new delhi' />
-                <div className='absolute-popular-destination'>
-                  <h3>Goa</h3>
-                  <p>GOA</p>
-                </div>
-              </div>
-              <div >
-                <img src='https://images.ixigo.com/image/upload/f_auto/accommodations/popular-location-v2/f12d03b22a387022e80991101a0ad94e-bttxc.jpg' alt='new delhi' />
-                <div className='absolute-popular-destination'>
-                  <h3>Chennai</h3>
-                  <p>TAMIL NADU</p>
-                </div>
-              </div>
-              <div >
-                <img src='https://images.ixigo.com/image/upload/f_auto/accommodations/popular-location-v2/12197f92305a7f21f93410c53833e4f8-nfboj.jpg' alt='new delhi' />
-                <div className='absolute-popular-destination'>
-                  <h3>Kolkata</h3>
-                  <p>WEST BENGAL</p>
-                </div>
-              </div>
-              <div >
-                <img src='https://images.ixigo.com/image/upload/f_auto/accommodations/popular-location-v2/051595de7e3d11e09c0d50e9cee88475-qobtm.jpg' alt='new delhi' />
-                <div className='absolute-popular-destination'>
-                  <h3>Hyderabad</h3>
-                  <p>TELANGANA</p>
-                </div>
-              </div>
-              <div >
-                <img src='https://images.ixigo.com/node_image/f_auto/entityId/503b2a95e4b032e338f14729.jpg' alt='new delhi' />
-                <div className='absolute-popular-destination'>
-                  <h3>Bengaluru</h3>
-                  <p>Karnataka</p>
-                </div>
-              </div>
-              <div >
-                <img src='https://images.ixigo.com/image/upload/f_auto/accommodations/popular-location-v2/e83be5f1f4fca3ae14f04c8b639fd124-tinbn.jpg' alt='new delhi' />
-                <div className='absolute-popular-destination'>
-                  <h3>Jaipur</h3>
-                  <p>Rajasthan</p>
-                </div>
-              </div>
-              <div >
-                <img src='https://images.ixigo.com/image/upload/f_auto/accommodations/popular-locations/4e084232898bd6e91579f6ced30d11ba-xygmo.jpg' alt='new delhi' />
-                <div className='absolute-popular-destination'>
-                  <h3>Varanasi</h3>
-                  <p>UTTAR PRADESH</p>
-                </div>
-              </div>
-              <div >
-                <img src='https://images.ixigo.com/image/upload/f_auto/accommodations/popular-location-v2/34ba35441a8c517def8a16d52df689d0-igvob.jpg' alt='new delhi' />
-                <div className='absolute-popular-destination'>
-                  <h3>Pune</h3>
-                  <p>MAHARASHTRA</p>
-                </div>
-              </div>
-              <div >
-                <img src='https://images.ixigo.com/image/upload/f_auto/accommodations/popular-locations/81a78e561f5987b0f1052c8f27b071fd-gmryb.webp' alt='new delhi' />
-                <div className='absolute-popular-destination'>
-                  <h3>Ayodhya</h3>
-                  <p>UTTAR PRADESH</p>
-                </div>
-              </div>
-              <div >
-                <img src='https://images.ixigo.com/image/upload/f_auto/accommodations/popular-location-v2/9cdb603b2097211fe72e2f2fd7414e67-nlmvf.jpg' alt='new delhi' />
-                <div className='absolute-popular-destination'>
-                  <h3>Puri</h3>
-                  <p>ODISHA</p>
-                </div>
-              </div>
-              <div >
-                <img src='https://images.ixigo.com/image/upload/f_auto/accommodations/popular-location-v2/ee2523a0e1e4a5ee7c03b7b11998245c-toqvb.jpg' alt='new delhi' />
-                <div className='absolute-popular-destination'>
-                  <h3>LUCKNOW</h3>
-                  <p>UTTAR PRADESH</p>
-                </div>
-              </div>
-              <div >
-                <img src='https://images.ixigo.com/image/upload/f_auto/accommodations/popular-location-v2/30f2db54ab34c2ec091fb73e30ea1cf0-jqkwp.jpg' alt='new delhi' />
-                <div className='absolute-popular-destination'>
-                  <h3>Amritsar</h3>
-                  <p>PUNJAB</p>
-                </div>
-              </div>
-              <div >
-                <img src='https://images.ixigo.com/image/upload/f_auto/accommodations/popular-location-v2/48c019b8ed21737ee44f0d3b365ea08a-qqigu.jpg' alt='new delhi' />
-                <div className='absolute-popular-destination'>
-                  <h3>Guwahati</h3>
-                  <p>ASSAM</p>
-                </div>
-              </div>
-              <div >
-                <img src='https://images.ixigo.com/image/upload/f_auto/accommodations/popular-location-v2/46b6bb554bd8c8010de05c8c0f1fe085-opeqr.jpg' alt='new delhi' />
-                <div className='absolute-popular-destination'>
-                  <h3>Agra</h3>
-                  <p>UTTAR PRADESH</p>
-                </div>
-              </div>
-              <div >
-                <img src='https://images.ixigo.com/image/upload/f_auto/accommodations/popular-locations/63a279e425dc79593c0f8259e3f31ca4-eahjx.jpeg' alt='new delhi' />
-                <div className='absolute-popular-destination'>
-                  <h3>Shirdi</h3>
-                  <p>MAHARASHTRA</p>
-                </div>
-              </div>
-              <div >
-                <img src='https://images.ixigo.com/image/upload/f_auto/accommodations/popular-locations/716110e6077ddc56ab3c290feaf44226-ytpot.jpg' alt='new delhi' />
-                <div className='absolute-popular-destination'>
-                  <h3>Ahmedabad</h3>
-                  <p>GUJARAT</p>
-                </div>
-              </div>
-              <div >
-                <img src='https://images.ixigo.com/image/upload/f_auto/accommodations/popular-location-v2/e20807bcfc19e6d9507aa8b3b422121e-eoquz.jpg' alt='new delhi' />
-                <div className='absolute-popular-destination'>
-                  <h3>Tirupati</h3>
-                  <p>ANDHRA PRADESH</p>
-                </div>
-              </div>
-              <div >
-                <img src='https://images.ixigo.com/image/upload/f_auto/accommodations/popular-location-v2/e81c33aaece67c1c960b5584d00d32fc-fsfoh.jpg' alt='new delhi' />
-                <div className='absolute-popular-destination'>
-                  <h3>Manali</h3>
-                  <p>HIMACHAL PRADESH</p>
-                </div>
-              </div>
-              <div >
-                <img src='https://images.ixigo.com/image/upload/f_auto/accommodations/popular-location-v2/839b81b08e16b9f4f09e2ec976fbc9ea-bfhyz.jpg' alt='new delhi' />
-                <div className='absolute-popular-destination'>
-                  <h3>Shimla</h3>
-                  <p>HIMACHAL PRADESH</p>
-                </div>
-              </div>
-              <div >
-                <img src='https://images.ixigo.com/image/upload/f_auto/accommodations/popular-locations/394b5710a383cc1650cc32516f18cbda-qktyq.jpg' alt='new delhi' />
-                <div className='absolute-popular-destination'>
-                  <h3>Visakhapatnam</h3>
-                  <p>ANDHRA PRADESH</p>
-                </div>
-              </div>
-              <div >
-                <img src='https://images.ixigo.com/image/upload/f_auto/accommodations/popular-locations/37a1f5e05ed77effa2bc6eb1a48e516c-bdghy.jpeg' alt='new delhi' />
-                <div className='absolute-popular-destination'>
-                  <h3>Katra</h3>
-                  <p>JAMMU AND KASHMIR</p>
-                </div>
-              </div>
-              <div >
-                <img src='https://images.ixigo.com/image/upload/f_auto/accommodations/popular-location-v2/c52f879cf26f55cca204a77da56059a5-kkfox.jpg' alt='new delhi' />
-                <div className='absolute-popular-destination'>
-                  <h3>Patna</h3>
-                  <p>BIHAR</p>
-                </div>
-              </div>
-              <div >
-                <img src='https://images.ixigo.com/image/upload/f_auto/accommodations/popular-location-v2/f7ea20d19978a5d8ea749da19935a551-trnqx.jpg' alt='new delhi' />
-                <div className='absolute-popular-destination'>
-                  <h3>Ooty</h3>
-                  <p>TAMIL NADU</p>
-                </div>
-              </div>
+             {
+                POPULAR_DESTINATIONS.map((destination, index) => {
+                  return (
 
+                <div key={index} >
+                  <img onClick={()=>handlePopularDestinationClick({"city": destination.city, "state": destination.state})} src={destination.img} alt={destination.city} />
+                  <div className='absolute-popular-destination'>
+                    <h3>{destination.city}</h3>
+                    <p>{destination.state}</p>
+                  </div>
+                </div>
+                  )
+                })
+              }
+              
+              
               <div className='popular-destination-next-prev'>
                 <div onClick={showPreviousDestination} style={{visibility:(button.prev?'visible':'hidden')}} >
                 <img alt='previous-icon' src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA5UlEQVR4nO2ZOw7CQAxEHYr4qEhQ2DkBf0jLR1DA7exzsHRApCSIanckP8n9zHi1Hy9REATB/6SqVjuz+pzwSFUtdmH1xGpPMBPv5NOnDMXEd/LdqsVuVL54P/WL9zst0oTKJVWsfgQVT8TqbYjPAYsfkJPfh/gcsPgOOHnbhvgcsNoGN3mxdYjPAautkJNfwoofNaD2gDAwuoSgTMjADhQmSjnIoDqhA/egMFHKdRqrE97/GgsTpTzqwTrRhomiR4sKs5xGhrsKZQJ2vP7jg6PxGcF+MTVQ4juduLLYNLeSIAgoLy+9z15ZP/8kOAAAAABJRU5ErkJggg=="/>

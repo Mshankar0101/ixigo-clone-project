@@ -6,6 +6,7 @@ import { AiOutlineSwap } from "react-icons/ai";
 import { MdOutlineLocationCity } from "react-icons/md";
 import { useLocation, useNavigate } from 'react-router-dom';
 import {GlobalContext} from '../../context/Contexts';
+import { stationsArr } from '../data';
 import Login from '../Login';
 import NoTrainsFound from './NoTrainsFound';
 import Footer from '../Footer';
@@ -59,55 +60,7 @@ const SearchTrain = () => {
   },[]);
 
 
-  //input change and station rendering
-  const stationsArr= [
-    {id:1, name:"Agra Cantonment"},
-    {id:2, name:"Ahmedabad Junction"},
-    {id:3, name:"Ambala Cantonment"},
-    {id:4, name:"Amritsar Junction"},
-    {id:5, name:"Anand Junction"},
-    {id:6, name:"Barddhaman Junction"},
-    {id:7, name:"Bengaluru City Junction"},
-    {id:8, name:"Chandigarh"},
-    {id:9, name:"Chennai Central"},
-    {id:10, name:"Coimbatore Junction"},
-    {id:11, name:"Delhi Junction"},
-    {id:12, name:"Dhanbad Junction"},
-    {id:13, name:"Gorakhpur Junction"},
-    {id:14, name:"Guwahati"},
-    {id:15, name:"Hazrat Nizamuddin"},
-    {id:16, name:"Howrah Junction"},
-    {id:17, name:"Hubli Junction"},
-    {id:18, name:"Indore Junction"},
-    {id:19, name:"Kalyan Junction"},
-    {id:20, name:"Kanpur Central"},
-    {id:21, name:"Katpadi Junction"},
-    {id:22, name:"Kharagpur Junction"},
-    {id:23, name:"Kollam Junction"},
-    {id:24, name:"Lucknow Charbhagh"},
-    {id:25, name:"Ludhiana Junction"},
-    {id:26, name:"Manmad Junction"},
-    {id:27, name:"Moradabad Junction"},
-    {id:28, name:"Mughal Sarai Junction"},
-    {id:29, name:"Mysuru Junction"},
-    {id:30, name:"Nadiad Junction"},
-    {id:31, name:"Nagpur Junction"},
-    {id:32, name:"Patna Junction"},
-    {id:33, name:"Pune Junction"},
-    {id:34, name:"Raipur Junction"},
-    {id:35, name:"Salem Junction"},
-    {id:36, name:"Secunderabad Junction"},
-    {id:37, name:"Surat"},
-    {id:38, name:"Thiruvananthapuram Central"},
-    {id:39, name:"Thrissur"},
-    {id:40, name:"Udaipur City"},
-    {id:41, name:"Vadodara Junction"},
-    {id:42, name:"Varanasi Junction"},
-    {id:43, name:"Vellore Katpadi"},
-    {id:44, name:"Vijayawada Junction"},
-    {id:45, name:"Visakhapatnam Junction"},
-    {id:46, name:"Warangal"}
-  ] 
+  
 
    //handling input of from feild
    const handleFromInputChange = (e)=>{
@@ -344,7 +297,7 @@ useEffect(()=>{
 },[])
 
   return (
-    <>
+  <div className='train-search-page-background'>
   <div className='train-search-page'>
         <div className='train-search-box-searchPage'>
             <div className='search-input-feilds'>
@@ -697,7 +650,7 @@ useEffect(()=>{
           }
 
       </div>
-    </>
+    </div>
   )
 }
 

@@ -8,14 +8,7 @@ const BookingPage = () => {
        window.scroll(0,0);
    },[])
 
-
-    const location = useLocation();
-    const {ticketPrice,totalTravlers} = location.state || {};
-    console.log(totalTravlers, ticketPrice);
-
     
-
-
     //button
     const CustomButton = styled(Button)(({ theme }) => ({
         textTransform:'none',
@@ -59,10 +52,32 @@ const BookingPage = () => {
          setSelectedOption(Number(value));
      }
      
-     const [taxes, setTaxes]=useState(Math.floor(ticketPrice*1/20));
-     const [totalAmount, setTotalAmount]=useState(ticketPrice+taxes-selectedOption);
+
+
+
+    //  accessing value 
+    const [taxes, setTaxes]=useState(0);
+    const [totalAmount, setTotalAmount]=useState(0);
+    const [totalTravlers, setTotalTravellers]=useState(null);
+    const [ticketPrice, setTicketPrice]= useState(0);
+    
+
+
+    const location = useLocation();
+    useEffect(()=>{
+        const {ticketPrice,totalTravlers} = location.state || {};
+        // console.log(totalTravlers, ticketPrice);
+        setTaxes(Math.floor(ticketPrice*1/20));
+        setTotalAmount(ticketPrice+taxes-selectedOption);
+        setTotalTravellers(totalTravlers);
+        setTicketPrice(ticketPrice);
+    },[location.state])
+
+
+    
       
      useEffect(()=>{
+       const {ticketPrice,totalTravlers} = location.state || {};
        let length = travellers.length;
        let newTax = Math.floor(ticketPrice*1/20)*length;
     //    console.log(length);

@@ -78,9 +78,9 @@
     justify-content: center;
     align-items: flex-start;
 }
-.login-signup-container .css-1eed5fa-MuiInputBase-root-MuiInput-root::after{
-    border-bottom: 2px solid #EC5B24 !important;
-}
+.login-signup-container .Mui-focused::after{
+    border-bottom: 2px solid #EC5B24;
+ }
 .login-feilds button, .signup-feilds button{
     border: none;
     width: 100%;

@@ -19,6 +19,7 @@ const Buses = () => {
   const [offerBtn, setOfferBtn]= useState({prev:false,next:true});
   const offerRef= useRef();
   useEffect(() => {
+    window.scroll(0,0);
     const container = offerRef.current;
     const handleScroll = () => {
    

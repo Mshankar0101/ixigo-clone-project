@@ -22,7 +22,8 @@ const Flights = () => {
     .then((data)=>setOffers(data.offers))
     .catch((err)=> console.log(err));
  }
-    useEffect(()=>{  
+    useEffect(()=>{ 
+        window.scroll(0,0); 
         fetchOffers(); 
         // console.log(offer);
     },[]);
