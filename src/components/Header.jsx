@@ -3,6 +3,12 @@ import "../styles/Header.css";
 import {NavLink, useLocation} from 'react-router-dom';
 import Navbar from './Navbar';
 import { GlobalContext } from '../context/Contexts';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import IconButton from '@mui/material/IconButton';
+import Tooltip from '@mui/material/Tooltip';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import { LuLogOut } from "react-icons/lu";
 
 export const Header = () => {
   const [isScroll, setIsScroll] = useState(false);  
@@ -46,19 +52,29 @@ useEffect(()=>{
   const user =localStorage.getItem("userName");
   const {setLoginModalOpen} = useContext(GlobalContext);
 
+  //toggle user and logout
+  const [anchorEl, setAnchorEl]= useState(null);
+  const open = Boolean(anchorEl);
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+  // const toggleLogout =()=>{
+  //   setLogout(!logout);
+  // }
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  }
+
+
   const [, setState] = useState();
   const handleLogout =()=>{
     localStorage.removeItem("userName");
     localStorage.removeItem("token");
-    setState({}); //forcing a state update to refresh page
+    handleClose();
+     setState({}); //forcing a state update to refresh page
   }
 
 
-  //toggle user and logout
-  const [logout, setLogout]= useState(false);
-  const toggleLogout =()=>{
-    setLogout(!logout);
-  }
 
   return (
     <div className='header'  > 
@@ -85,19 +101,44 @@ useEffect(()=>{
 
               {
                 user ?
-                <div onClick={toggleLogout} style={{padding:'8px 0px'}} className='header-signin'>
-                         <div><img alt='user' src='https://edge.ixigo.com/st/vimaan/_next/static/media/userFilled.12154510.svg'/></div>
+                 <>
+                   <div onClick={handleClick} style={{padding:'8px 0px'}} className='header-signin'>
+                          <Tooltip title='Account'>
+                            <IconButton
+                              onClick={handleClick}
+                              aria-controls={open ? 'account-menu' : undefined}
+                              aria-haspopup="true"
+                              aria-expanded={open ? 'true' : undefined}
+                            >
+                             <div className='img-div'><img alt='user' src='https://edge.ixigo.com/st/vimaan/_next/static/media/userFilled.12154510.svg'/></div>
+                            </IconButton>
+                          </Tooltip>
                           <div className="logoutButton">
-                            {logout?
-                              <button onClick={handleLogout} >Logout</button>
-                              :
-                              <p>hey, { user}</p>
-                             }
+                            <p>hey, { user}</p>
                           </div>
-                </div>
+                    </div>
+                            <Menu
+                              id="account-menu"
+                              anchorEl={anchorEl}
+                              keepMounted
+                              open={open}
+                              onClose={handleClose}
+                              MenuListProps={{
+                                'aria-labelledby': 'basic-button',
+                              }}
+                              disableScrollLock={false}
+                            >
+                              <MenuItem onClick={handleLogout}>
+                                <ListItemIcon>
+                                  <LuLogOut style={{width:'20px', height:'20px'}} />
+                                </ListItemIcon>
+                                Logout
+                              </MenuItem>
+                            </Menu>
+                 </>
                     :
                 <div className='header-signin'>
-                    <div><img alt='user' src='https://edge.ixigo.com/st/vimaan/_next/static/media/userFilled.12154510.svg'/></div>
+                    <div className='img-div'><img alt='user' src='https://edge.ixigo.com/st/vimaan/_next/static/media/userFilled.12154510.svg'/></div>
                   <NavLink onClick={()=> setLoginModalOpen(true)} to='login-signup' >
                     <button type='submit' className='loginButton'>Log in/Sign up</button>
                   </NavLink>

@@ -7,8 +7,21 @@ import {GlobalContext} from '../context/Contexts';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 const Login = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  
+
+
   const {loginModalOpen, setLoginModalOpen, user, setUser} = useContext(GlobalContext);
-  const handleClose = () => setLoginModalOpen(false);
+  const handleClose = (event, reason) =>{
+    if(location.pathname === "/login-signup"){
+      if (reason !== 'backdropClick' && reason !== 'escapeKeyDown') {
+        setLoginModalOpen(false);
+      }
+    }else{
+      setLoginModalOpen(false);
+    }
+  } 
 
  const [activeTab, setActiveTab]= useState("signup");
  const handleSwitchTabs = (tab)=>{
@@ -25,9 +38,7 @@ const Login = () => {
  }
 
 
-  const navigate = useNavigate();
-  const location = useLocation();
-  
+ 
  
   const navigateUser = (data)=>{
     if(data.status === "success"){
@@ -143,6 +154,7 @@ const Login = () => {
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
+        
       >
         <div className='login-signup-modal'>
           <div className='login-signup-poster'>

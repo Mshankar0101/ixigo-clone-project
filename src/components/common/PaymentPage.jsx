@@ -3,10 +3,23 @@ import qrCode from '../../images/qrCode.png';
 import '../../styles/PaymentPage.css';
 import { FaRegClock } from "react-icons/fa";
 import { IoCardOutline } from "react-icons/io5";
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { Box, Modal } from '@mui/material';
+import { TiTick } from "react-icons/ti";
+import { GiCheckMark } from "react-icons/gi";
+import { GrCheckmark } from "react-icons/gr";
 
 const PaymentPage = () => {
-    const [minutes, setMinutes] = useState(4);
+    const location = useLocation();
+    const {total} = location.state || {};
+    
+    useEffect(()=>{
+      window.scroll(0,0);
+    },[])
+
+
+    // payment time 
+    const [minutes, setMinutes] = useState(10);
     const [seconds, setSeconds] = useState(0);
   
     useEffect(() => {
@@ -23,18 +36,95 @@ const PaymentPage = () => {
     }, [seconds, minutes]);
       
 
+  //  upi and card payment 
    const [activeTab, setActiveTab]= useState("upi");
+   const [upi, setUpi]= useState();
+   const [card, setCardDetails]= useState({number:undefined, date:'',cvv:''})
+   const [open, setOpen]= useState(false);
+
+   const upiPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+$/;
+   const cardPattern = /^\d{13,19}$/;
+   const cardDatePattern = /^(0[1-9]|1[0-2])\/\d{2}$/;
+   const cardCvvPattern = /^\d{3,4}$/;
 
 
-   const location = useLocation();
-   const {total} = location.state || {};
+   const currentDate = new Date();
+   const currentYear = currentDate.getFullYear();
+   const yearTwoDigit= currentYear % 100;
+   const currentMonth = currentDate.getMonth() + 1;
+
+   const handleUpiIdPayment = ()=>{
+      !upi?  alert("Please enter UPI ID"): upiPattern.test(upi)? handlePayment(): alert("Invalid UPI ID");
+   }
+
+
+   
+   
+
+   const handleCardChange = (e)=>{
+      const {name, value}= e.target;
+      setCardDetails((prev)=>{
+         return {...prev,  [name]: value};
+      })
+   }
+
+   const handleCardPayment = ()=>{
+    let enteredDate;
+    try{
+        enteredDate = card.date.split("/");
+    }catch(e){
+        console.log("error",e.message);
+    }
+     !card.number? alert("Please enter card number"): !card.date? alert("Please enter card date"): !card.cvv? alert("Please enter card cvv"):
+     !cardPattern.test(card.number)? alert('Invalid card number'): !cardDatePattern.test(card.date)? alert('Invalid card date'): !cardCvvPattern.test(card.cvv)? alert('Invalid card cvv'):
+     Number(enteredDate[1]) < yearTwoDigit? alert("Your card is expired, check your card expiry Year."): (Number(enteredDate[1]) == yearTwoDigit && Number(enteredDate[0]) < currentMonth) ? alert('Your card expired this Year, check your card expiry Month.') : handlePayment();
+   }
+
+  // modal style
+    const style = {
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        width: '90%',
+        maxWidth:'420px',
+        bgcolor: 'background.paper',
+        borderRadius: '10px',
+        boxShadow: 24,
+        padding:2,
+        display:'flex',
+        flexDirection:'column',
+        gap:'10px',
+        alignItems:'center',
+        justifyContent:'center'
+    };
+    const handleClose = (event, reason) =>{
+        if (reason !== 'backdropClick' && reason !== 'escapeKeyDown') {
+          setOpen(false);
+        }
+       
+    } 
+    
+    // navigating to home page
+    const navigate = useNavigate();
+    const navigateUser = ()=>{
+         setOpen(false);
+         navigate('/flights');
+    }
+     
+    // sucessful payment model open and navigating user to home
+    const handlePayment = ()=>{
+        setOpen(true);
+        setTimeout(()=>{
+          setOpen(false);
+          navigate('/flights')
+        },10000)
+     }
+
   
 
-   useEffect(()=>{
-     window.scroll(0,0);
-   },[])
-
   return (
+    
     <div className='payment-page'>
        <div className='timer-amount'>
            <div>
@@ -84,6 +174,7 @@ const PaymentPage = () => {
                             <div className='upi-scanner'>
                                 <img src={qrCode} alt='qrcode' />
                             </div>
+                            <button onClick={handlePayment} > Pay ₹{total} </button>
                             <img src='https://images.ixigo.com/image/upload/payment/ccf9d07de5249c90efb693a9b8951935-fnbve.png' alt='upi'/>
                         </div>
 
@@ -98,8 +189,8 @@ const PaymentPage = () => {
                         <div className='pay-using-upi-id'>
                             <p>Enter UPI ID Manually</p>
                             <div>
-                                <input type="text" placeholder='UPI ID' />
-                                <button> Pay ₹{total} </button>
+                                <input onChange={(e)=>setUpi(e.target.value)} type="text" placeholder='UPI ID' />
+                                <button onClick={handleUpiIdPayment} > Pay ₹{total} </button>
                             </div>
                         </div>
                     </div>
@@ -113,10 +204,10 @@ const PaymentPage = () => {
                         <p>Add New Card</p>
 
                         <div className='input-box'>
-                            <input type='number' placeholder='Enter Card Number'/>
-                            <input type='text' placeholder='Exp. Date(MM/YY)' />
-                            <input style={{maxWidth:'98px'}} type='text' placeholder='CVV' />
-                            <button> Securly Pay ₹{total} </button>
+                            <input onChange={handleCardChange} name='number' type='number' placeholder='Enter Card Number'/>
+                            <input onChange={handleCardChange} name='date' type='text' placeholder='Exp. Date(MM/YY)' />
+                            <input onChange={handleCardChange} name='cvv' style={{maxWidth:'98px'}} type='text' placeholder='CVV' />
+                            <button onClick={handleCardPayment} > Securly Pay ₹{total} </button>
                         </div>
                     </div>
 
@@ -126,6 +217,25 @@ const PaymentPage = () => {
           
           
        </div>
+
+       {
+         open &&
+         (<Modal
+         open={open}
+         onClose={handleClose}
+         >
+            <Box sx={style} className='success-payment'>
+                <div>
+                    <GrCheckmark className='tick-icon' />
+                </div>
+                <p>Payment Done!</p>
+                <p>Thank you for completing your secure online payment. Navigating back to Home Page within few seconds...</p>
+                <p>Have a great day!</p>
+                <button onClick={navigateUser}>HOME PAGE</button>
+            </Box>
+         </Modal>)
+       }
+    
     </div>
   )
 }

@@ -26,7 +26,10 @@ const BookingPage = () => {
     const handleAddTraveller = ()=>{
         if(!traveller.FirstName || !traveller.LastName || !traveller.Age ||  !traveller.Nationality){
             alert("Please fill all the fields");
-        }else{
+        }else if(traveller.Age <= 0){
+            alert("Age should be greater than 0");
+        }
+        else{
             setTravellers((pre)=>{
                 return [...pre,traveller];
             })
@@ -55,7 +58,7 @@ const BookingPage = () => {
 
 
 
-    //  accessing value 
+    //  accessing values from location's state
     const [taxes, setTaxes]=useState(0);
     const [totalAmount, setTotalAmount]=useState(0);
     const [totalTravlers, setTotalTravellers]=useState(null);
@@ -95,7 +98,24 @@ const BookingPage = () => {
 
 
      //contact and addres details
-     const [contactDetails, setContactDetails]= useState({countrycode:undefined, number: undefined, email: ''});
+     function isValidEmail(email) {
+        const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        return regex.test(email);
+     }
+     function isValidNumber(number) {
+        const regex = /^[6-9]\d{9}$/;
+        return regex.test(number);
+     }
+     function isValidCode(code) {
+        const regex = /^(\+|00)?\d{1,3}$/;
+        return regex.test(code);
+     }
+     function isValidPinCode(code) {
+        const regex = /^\d{6}$/;
+        return regex.test(code);
+     }
+
+     const [contactDetails, setContactDetails]= useState({countrycode:"+91", number:"" , email: ''});
      const handleContactDetailsChange = (e)=>{
         const {name,value}= e.target;
         setContactDetails((prev)=>{
@@ -112,16 +132,35 @@ const BookingPage = () => {
       }
 
 
-     const navigate = useNavigate();
+     const navigate = useNavigate(); 
+     const cityPattern = /^[a-zA-Z\s\-']{2,100}$/;
+     const statePattern = /^[a-zA-Z\s]{2,100}$/;
+     const addressPattern = /^[a-zA-Z0-9\s,.'-]{5,100}$/;
      const handlePayment = ()=>{
+        console.log(typeof(contactDetails.countrycode));
+        console.log(typeof(contactDetails.number));
         if(contactDetails.countrycode && contactDetails.number && contactDetails.email){
-            if(addressDetails.pincode && addressDetails.address && addressDetails.city && addressDetails.state){
-                let data = {
-                    total: totalAmount
-                }
-                navigate("payment", {state: data})
+            if(!isValidEmail(contactDetails.email)){
+                alert('Invalid Email');
+            }else if(!isValidNumber(contactDetails.number)){
+                alert('Invalid Mobile Number');
+            }else if(!isValidCode(contactDetails.countrycode)){
+                alert('Invalid Country Code');
             }else{
-                alert("Please fill all the address details")
+                if(addressDetails.pincode && addressDetails.address && addressDetails.city && addressDetails.state){
+                         let data = {
+                            total: totalAmount
+                        }
+                      !isValidPinCode(addressDetails.pincode)? alert('Invalid Pincode, Pincode must be of 6 digits'):
+                      !addressPattern.test(addressDetails.address)? alert('Invalid Address, Address must be of 5-100  characters'):
+                      !cityPattern.test(addressDetails.city)? alert('Invalid City, City must be of 2-100 characters, make sure you are not including numbers'):
+                      !statePattern.test(addressDetails.state)? alert('Invalid State, State must be of 2-100 characters, make sure you are not including numbers'):
+                      navigate("payment", {state: data});
+
+
+                }else{
+                    alert("Please fill all the address details")
+                }
             }
         }else{
             alert("Please fill your Contact details")
@@ -443,14 +482,16 @@ const BookingPage = () => {
                     >
 
                     <TextField
+                      required
                       size='small'
                       label="Pincode"
-                      type='pin'
+                      type='number'
                       value={addressDetails.pincode}
                       name='pincode'
                       onChange={handleAdressDetailsChange}
                     />
                     <TextField
+                      required
                       size='small'
                       label="Address"
                       type='text'
@@ -459,6 +500,7 @@ const BookingPage = () => {
                       onChange={handleAdressDetailsChange}
                       />
                     <TextField
+                      required
                       size='small'
                       label="City"
                       type='text'
@@ -467,6 +509,7 @@ const BookingPage = () => {
                       onChange={handleAdressDetailsChange}
                     />
                     <TextField
+                      required
                       size='small'
                       label="State"
                       type='text'
