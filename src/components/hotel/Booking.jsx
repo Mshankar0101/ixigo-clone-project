@@ -140,7 +140,7 @@ import Footer from '../Footer';
 
                     return(
 
-                        <ImageListItem key={item} cols={cols} rows={rows}>
+                        <ImageListItem style={{backgroundColor:'#ffebe6'}} key={item} cols={cols} rows={rows}>
                         <img
                             style={{borderRadius:'15px'}}
                             {...srcset(item, 190, rows, cols)}

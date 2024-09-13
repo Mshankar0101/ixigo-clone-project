@@ -1,5 +1,5 @@
 import "../styles/App.css";
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, lazy, Suspense } from "react";
 import { Routes, Route, useLocation, Navigate} from "react-router-dom";
 import Flights from "./flight/Flights";
 import Search from "./flight/Search";
@@ -17,11 +17,18 @@ import NavbarMobile from "./NavbarMobile";
 import SearchTrain from "./train/SearchTrain";
 import SearchBus from "./bus/SearchBus";
 import SearchHotel from "./hotel/SearchHotel";
-import Booking from "./hotel/Booking";
 import UnderConstruction from "./UnderConstruction";
 import PaymentPage from "./common/PaymentPage";
-// import GlobalContextProvider from "../context/GlobalContextProvider";
 
+const LazyBook = lazy(()=> wait(3000).then(()=>import('./hotel/Booking')));
+
+const wait = (time) => {
+  return new Promise((resolve)=>{
+    setTimeout(()=>{
+      resolve();
+    },time);
+  })
+}
 
 function App() {
   const location = useLocation();
@@ -68,7 +75,18 @@ function App() {
 
             <Route path="/hotels/*" element={<Hotels />} />
             <Route path="/hotels/search/*" element={<SearchHotel />} />
-            <Route path="/hotels/search/book/*" element={<Booking />} />
+            <Route path="/hotels/search/book/" element={<Suspense fallback={
+              <div className="loading-book-modal-style-main">
+               <div className="loading-book-loader-style">
+                    <h1>Loading</h1>
+                  <div class="loader">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                  </div>
+               </div>
+             </div>
+            }><LazyBook/></Suspense>} />      
             <Route path="/hotels/search/book/payment" element={<PaymentPage />} />
 
             <Route path="/trains/*" element={<Trains />} />

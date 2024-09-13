@@ -658,7 +658,7 @@ const SearchHotel = () => {
                                                         return(
 
                                                                 <div key={index} className='image-box'>
-                                                                    <img src={image} alt='hotel-img' />
+                                                                    <img src={image} loading="lazy" alt='hotel-img' />
                                                                 </div>
                                                         )
                                                     })
